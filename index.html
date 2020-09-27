@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="icon" href="images/OLX-Logo.png" type="icon" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Rent & Ride</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <!-- <li class="nav-item active " >
+            <a class="nav-link" href="#" id="greetUser"></a>
+          </li> -->
+          <li class="nav-item active " >
+            <a class="nav-link"><input class="form-control border-secondary py-2" type="search" name="search" id="search" placeholder="Search vehicle" onkeyup="searchFunction()"/></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" class="userProfile" href="User Profile.html" id="userProfile"></a>
+          </li>
+          <li class="nav-item ">
+              <a class="nav-link" class="favourite" style="display: none" href="favourite.html" id="favourite">Favourites</a>
+          </li>
+          <li class="nav-item" class="inActiveUser" id="inActiveUser">
+            <a class="nav-link" href="signin.html">Login</a>
+          </li>
+          <li class="activeUser nav-item" id="activeUser">
+            <a class="nav-link" href="index.html" onclick="signOut()">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+        
+  <h1 class="suh text-center text-dark">Special Durgo Pujo offers!</h1>
+  <div class="container">
+  <div class="form-group">
+    <label for="category"><b>Choose vehicle type</b></label>
+    <select onchange="selectCategory()" name="category" id="homePageCategorySelection" class="form-control" id="category">
+        <option>Motorcycle / Scooty</option>
+
+    </select>
+  </div>
+</div>   
+
+  <!-- bootstrap Modal -->
+    
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="messages-text" class="col-form-label">Messages:</label>
+            <div class="modal-body" id="messages-text"><p id="modal-list"></p></div>
+          </div>
+          <div class="form-group">
+            <label for="recipient-messege" class="col-form-label">Type Your Message Here</label>
+            <input type="text" class="form-control" id="recipient-messege">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="sendMessage()">Send Message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container" id="container">
+      <div class="row" id="row">
+          <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <small>Honda</small>
+                  <img class="validate card-img-top" src="https://cdn.autoportal.com/bp-v3/img/models/21/d/honda-dio-1504252609.jpeg" />
+                  <div class="card-body">
+                      <h3 class="card-title">Dio</h3>
+                      <h4 class="category">Scooty</h4>
+                      <p class="validate card-text">Motor-scooter and the best choice since long</p>
+                      <h5>Rs. 499</h5>
+                      <button type="button" class="btn btn-primary" onclick="signInFirst()">Book</button>
+                      <button type="button" class="btn btn-warning" onclick="signInFirst()">Avail 48% discount</button>
+                  </div>
+              </div>
+          </div>
+          <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <small>Hero</small>
+                  <img class="validate card-img-top" src="https://gokulgroups.com/gokul-hero/images/bike/price-bike.png" />
+                  <div class="card-body">
+                      <h3 class="card-title">Maestro</h3>
+                      <h4 class="category">Scooty</h4>
+                      <p class="validate card-text">Get the feeling of actual smoothness</p>
+                      <h5>Rs. 509</h5>
+                      <button type="button" class="btn btn-primary" onclick="signInFirst()">Book</button>
+                      <button type="button" class="btn btn-warning" onclick="signInFirst()">Avail 48% discount</button>
+                  </div>
+              </div>
+          </div>
+          <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <small>Honda</small>
+                  <img class="validate card-img-top" src="https://media.zigcdn.com/media/content/2020/Jun/whatsapp_image_2020-06-24_at_12_04_51.jpg" />
+                  <div class="card-body">
+                      <h3 class="card-title">Grazia</h3>
+                      <h4 class="category">Scooty</h4>
+                      <p class="validate card-text">Strong 125CC with great mileage</p>
+                      <h5>Rs. 499</h5>
+                      <button type="button" class="btn btn-primary" onclick="signInFirst()">Book</button>
+                      <button type="button" class="btn btn-warning" onclick="signInFirst()">Avail 48% discount</button>
+                  </div>
+              </div>
+          </div>
+          <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <small>Aprilia</small>
+                  <img class="validate card-img-top" src="https://classyprice.com.bd/images/aprilia-sr-150-race.jpg" />
+                  <div class="card-body">
+                      <h3 class="card-title">SR 150</h3>
+                      <h4 class="category">Scooty</h4>
+                      <p class="validate card-text">Motor-scooter and the best choice since long</p>
+                      <h5>Rs. 699</h5>
+                      <button type="button" class="btn btn-primary" onclick="signInFirst()">Book</button>
+                      <button type="button" class="btn btn-warning" onclick="signInFirst()">Avail 48% discount</button>
+                  </div>
+              </div>
+          </div>
+          <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <small>TVS</small>
+                  <img class="validate card-img-top" src="https://imgd.aeplcdn.com/393x221/n/bw/models/colors/undefined-silver-black-1574511833442.jpg?q=85" />
+                  <div class="card-body">
+                      <h3 class="card-title">Wego</h3>
+                      <h4 class="category">Scooty</h4>
+                      <p class="validate card-text">Motor-scooter and the best choice since long</p>
+                      <h5>Rs. 499</h5>
+                      <button type="button" class="btn btn-primary" onclick="signInFirst()">Book</button>
+                      <button type="button" class="btn btn-warning" onclick="signInFirst()">Avail 48% discount</button>
+                  </div>
+              </div>
+          </div>
+          <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <small>TVS</small>
+                  <img class="validate card-img-top" src="https://assetscdn1.paytm.com/images/catalog/product/S/SC/SCOTVS-JUPITER-BALA860376C2E5522C/1583294121418_0.jpg?imwidth=320&impolicy=hq" />
+                  <div class="card-body">
+                      <h3 class="card-title">Jupiter</h3>
+                      <h4 class="category">Scooty</h4>
+                      <p class="validate card-text">If you are old-school , this is the perfect choice, with vintage seats and exceptional power</p>
+                      <h5>Rs. 509</h5>
+                      <button type="button" class="btn btn-primary" onclick="signInFirst()">Book</button>
+                      <button type="button" class="btn btn-warning" onclick="signInFirst()">Avail 48% discount</button>
+                  </div>
+              </div>
+          </div>
+          <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <small>TVS</small>
+                  <img class="validate card-img-top" src="https://static.langimg.com/thumb/msid-71200406,imgsize-45416,width-540,height-405,resizemode-75/navbharat-times.jpg" />
+                  <div class="card-body">
+                      <h3 class="card-title">N-Torq</h3>
+                      <h4 class="category">Scooty</h4>
+                      <p class="validate card-text">Fastest growing and most searched scooter of 2019-2020</p>
+                      <h5>Rs. 499</h5>
+                      <button type="button" class="btn btn-primary" onclick="signInFirst()">Book</button>
+                      <button type="button" class="btn btn-warning" onclick="signInFirst()">Avail 48% discount</button>
+                  </div>
+              </div>
+          </div>
+          <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <small>TVS</small>
+                  <img class="validate card-img-top" src="https://4.imimg.com/data4/QQ/QQ/GLADMIN-/https-www-tvsscooty-com-scooty-pep-plus-images-home-page-scooty-pep-2-500x500.png" />
+                  <div class="card-body">
+                      <h3 class="card-title">Pep Plus</h3>
+                      <h4 class="category">Scooty</h4>
+                      <p class="validate card-text">Great handling and light weight. It truly defines "Why should boys have all the fun"</p>
+                      <h5>Rs. 499</h5>
+                      <button type="button" class="btn btn-primary" onclick="signInFirst()">Book</button>
+                      <button type="button" class="btn btn-warning" onclick="signInFirst()">Avail 48% discount</button>
+                  </div>
+              </div>
+          </div>
+          <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <small>Honda</small>
+                  <img class="validate card-img-top" src="https://cdn1.droom.in//uploads/category/honda/20200117100850000000-6266856951545506817.jpg" />
+                  <div class="card-body">
+                      <h3 class="card-title">Activa</h3>
+                      <h4 class="category">Scooty</h4>
+                      <p class="validate card-text">Call it the trend-setter. It revolutionised the scooter industry</p>
+                      <h5>Rs. 509</h5>
+                      <button type="button" class="btn btn-primary" onclick="signInFirst()">Book</button>
+                      <button type="button" class="btn btn-warning" onclick="signInFirst()">Avail 48% discount</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>  
+     
+  <!-- Footer -->
+  <footer class="grid py-5 bg-dark">
+    <div class="container">
+        <div class="container">
+            <address style="color:#f0f5f5;font-family:Times New Roman;Text-Align:center">
+                    Hire Vehicles by Rent & Ride LLP 2020<sup>©</sup><br>
+                    West Bengal : Durgapur , Asansol , Howrah , Kolkata , Siliguri , Barrakpore , Kharagpur , Kishanganj<br>
+                    </address>
+    </div>
+    <!-- /.container -->
+  </footer>
+ 
+<!-- main -->
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCzPEhkUwgTiJu2pS69ao7YdnHu-0oVn3Q",
+    authDomain: "olx-pakistan-8800e.firebaseapp.com",
+    databaseURL: "https://olx-pakistan-8800e.firebaseio.com",
+    projectId: "olx-pakistan-8800e",
+    storageBucket: "gs://olx-pakistan-8800e.appspot.com",
+    messagingSenderId: "441355874801"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="signup.js"></script>
+    <script src="signin.js"></script>
+    <script src="submitad.js"></script>
+    <!-- <script src="User Profile.js"></script> -->
+    <script src="script.js"></script>
+
+</body>
+</html>
